@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using MiniShopApp.Business.Abstract;
 using MiniShopApp.Business.Concrete;
 using MiniShopApp.Data.Abstract;
 using MiniShopApp.Data.Concrete.EfCore;
+using MiniShopApp.WebUI.EmailServices;
 using MiniShopApp.WebUI.Identity;
 using System;
 using System.Collections.Generic;
@@ -34,6 +36,57 @@ namespace MiniShopApp.WebUI
             services.AddDbContext<ApplicationContext>(options=>options.UseSqlite("Data Source=MiniShopAppDB"));
             services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();//add default ile mail onayý aldýðýýmýz (adddefaulttokenproviders)
             //buraya Identityt ile ilgili çeþitli seçenekleri tanýmlýyacaðýz
+
+            services.Configure<IdentityOptions>(options =>
+           {
+
+               //Pasword
+               options.Password.RequireDigit = true;
+               options.Password.RequireUppercase = true;
+               options.Password.RequireLowercase = true;
+               options.Password.RequiredLength = 6;
+
+               //Lockout
+               options.Lockout.MaxFailedAccessAttempts = 3;
+               options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+               options.Lockout.AllowedForNewUsers = true;
+
+               //user
+               options.SignIn.RequireConfirmedEmail = true;
+           }
+            
+            );
+            services.ConfigureApplicationCookie(options => {
+
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+                options.AccessDeniedPath = "/account/accessdenied";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(20);//20 dakikalýk bir cookie
+                options.SlidingExpiration = true;//her requestte 20 dakikayý resetler
+                options.Cookie = new CookieBuilder()
+                {
+                   
+                    HttpOnly = true,
+                    Name="MiniShopApp.Security.Cookie",//isim verdik
+                    SameSite=SameSiteMode.Strict//cookie sadece açýlan tarayýcýda açýlabilmesi için 
+
+                };
+            
+            
+            
+            });
+            services.AddScoped<IEmailSender, SMTPEmailSender>(i => new SMTPEmailSender (
+            
+                Configuration["EmailSender:Host"],
+                Configuration.GetValue<int>("EmailSender:Port"),
+                Configuration.GetValue<bool>("EmailSender:EnableSSL"),
+                Configuration["EmailSender:UserName"],
+                Configuration["EmailSender:Password"]
+                )
+            );
+
+
+
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<IProductService, ProductManager>();
@@ -59,10 +112,10 @@ namespace MiniShopApp.WebUI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();//login ve register iþlemi için gerekli
             app.UseRouting();
-
-            app.UseAuthorization();
+            
+            app.UseAuthorization();//identity için gerekli
 
             app.UseEndpoints(endpoints =>
             {

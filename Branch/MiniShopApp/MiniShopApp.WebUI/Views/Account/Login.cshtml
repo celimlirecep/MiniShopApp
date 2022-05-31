@@ -4,6 +4,7 @@
     <hr />
     <form asp-action="Login" asp-controller="Account" method="post" >
         <div class="row">
+            <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
             <div class="col-md-8">
                 <div asp-validation-summary="All" class="text-danger">
                     <div class="form-group row mb-2">
@@ -26,7 +27,7 @@
                       
                         <div class="col-sm-9 offset-sm-3">
                             <button class="btn btn-primary" >Login</button>
-                            <a href="#" class="btn btn-link">Forgot Password</a>
+                            <a href="/Account/ForgotPassWord" class="btn btn-link">Forgot Password</a>
                         </div>
                     </div>
                 </div>
