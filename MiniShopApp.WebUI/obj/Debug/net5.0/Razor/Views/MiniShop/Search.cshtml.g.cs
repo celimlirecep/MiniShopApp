@@ -13,28 +13,56 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
 using MiniShopApp.WebUI;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
 using MiniShopApp.Entity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
 using MiniShopApp.WebUI.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+using MiniShopApp.WebUI.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.WebUI\Views\_ViewImports.cshtml"
+using MiniShopApp.Core;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99a91c84aab4c7d7e8ea40d40f0a0295ccec9817", @"/Views/MiniShop/Search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efca7abb504071629bf02662fe30c61d24a17285", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"77e075d311e3beafea059a41ce3afc1b0ce52dce", @"/Views/_ViewImports.cshtml")]
     public class Views_MiniShop_Search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -80,7 +108,7 @@ using MiniShopApp.WebUI.Models;
 #line hidden
 #nullable disable
             WriteLiteral("                    <div class=\"col-md-4\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "99a91c84aab4c7d7e8ea40d40f0a0295ccec98174396", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "99a91c84aab4c7d7e8ea40d40f0a0295ccec98175194", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

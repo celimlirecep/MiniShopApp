@@ -115,32 +115,31 @@ namespace MiniShopApp.Data.Concrete.EfCore
             }
         }
 
-        public void Create(Product product, int[] categorieIds)
+        public void Create(Product entity, int[] categoryIds)
         {
-            using (var context=new MiniShopContext())
+            using (var context = new MiniShopContext())
             {
-                context.Products.Add(product);
-                context.SaveChanges();//kayıt oluşucak ID oluşsun sonra 
-                product.ProductCategories=categorieIds.Select(carId=>new ProductCategory { 
-                
-                    ProductId=product.ProductId,
-                    CategoryId=carId
-                
-                }).ToList();
+                context.Products.Add(entity);
                 context.SaveChanges();
-                
-
+                entity.ProductCategories = categoryIds
+                    .Select(catId => new ProductCategory
+                    {
+                        ProductId = entity.ProductId,
+                        CategoryId = catId
+                    }).ToList();
+                context.SaveChanges();
             }
+
         }
 
-        public void Update(Product entity, int[] categoriIds)
+        public void Update(Product entity, int[] categoryIds)
         {
-            using (var context=new MiniShopContext())
+            using (var context = new MiniShopContext())
             {
                 var product = context
                     .Products
                     .Include(i => i.ProductCategories)
-                    .FirstOrDefault(i => i.ProductId == entity.ProductId);
+                    .FirstOrDefault(i=>i.ProductId==entity.ProductId);
                 product.Name = entity.Name;
                 product.Price = entity.Price;
                 product.Description = entity.Description;
@@ -148,24 +147,22 @@ namespace MiniShopApp.Data.Concrete.EfCore
                 product.ImageUrl = entity.ImageUrl;
                 product.IsApproved = entity.IsApproved;
                 product.IsHome = entity.IsHome;
-                product.ProductCategories = categoriIds.Select(catıd => new ProductCategory() { 
-                
-                ProductId=entity.ProductId,
-                CategoryId=catıd
-                
-                }).ToList();
+                product.ProductCategories = categoryIds
+                    .Select(catId => new ProductCategory()
+                    {
+                        ProductId = entity.ProductId,
+                        CategoryId = catId
+                    }).ToList();
                 context.SaveChanges();
-
-
-
             }
         }
 
         public Product GetByIdWithCategories(int id)
         {
-            using (var context=new MiniShopContext())
+            using (var context = new MiniShopContext())
             {
-                return context.Products
+                return context
+                    .Products
                     .Where(i => i.ProductId == id)
                     .Include(i => i.ProductCategories)
                     .ThenInclude(i => i.Category)

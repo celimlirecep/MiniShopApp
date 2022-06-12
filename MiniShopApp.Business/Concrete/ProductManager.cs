@@ -9,31 +9,22 @@ using System.Threading.Tasks;
 
 namespace MiniShopApp.Business.Concrete
 {
-    public class ProductManager : IProductService,IValidator<Product>
+    public class ProductManager : IProductService
     {
-        private IProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
         public ProductManager(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
-
-   
 
         public void Create(Product entity)
         {
             throw new NotImplementedException();
         }
 
-
-        public bool Create(Product product, int[] categorieIds)
+        public void Create(Product entity, int[] categoryIds)
         {
-            if (Validation(product))
-            {
-                _productRepository.Create(product, categorieIds);
-                return true;
-            }
-            return false;
-           
+            _productRepository.Create(entity, categoryIds);
         }
 
         public void Delete(Product entity)
@@ -87,28 +78,13 @@ namespace MiniShopApp.Business.Concrete
 
         public void Update(Product entity)
         {
-            _productRepository.Update(entity);
+            throw new NotImplementedException();
         }
 
-        public void Update(Product product, int[] categories)
+        public void Update(Product entity, int[] categoryIds)
         {
-             _productRepository.Update(product, categories);
+            _productRepository.Update(entity, categoryIds);
         }
-        public string ErrorMessage { get; set; }
-        public bool Validation(Product Entity)
-        {
-            var isValid = true;
-            if (string.IsNullOrEmpty(Entity.Name))
-            {
-                ErrorMessage += $"Ürün adı boş geçilemez!\n";
-                isValid = false;
-            }
-            if (Entity.Price<=0)
-            {
-                ErrorMessage += $"Ürün fiyatı 0 dan büyük olmalıdır.!\n";
-                isValid = false;
-            }
-            return isValid;
-        }
+
     }
 }
