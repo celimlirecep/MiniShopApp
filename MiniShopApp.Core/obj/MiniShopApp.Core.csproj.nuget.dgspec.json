@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {}
+    "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
+    "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
         "projectName": "MiniShopApp.Core",
-        "projectPath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
+        "projectPath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Core\\MiniShopApp.Core.csproj",
         "packagesPath": "C:\\Users\\recep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Core\\obj\\",
+        "outputPath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\recep\\AppData\\Roaming\\NuGet\\NuGet.Config",

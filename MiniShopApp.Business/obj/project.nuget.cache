@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "15K68K16rJVmmHO9w6ubI3NkGGmnehoESrZe44UWe2O2B+eOudiiJFq+oFk33tWqnT5QfQTjfYOIwBhIU2pKcA==",
+  "dgSpecHash": "IRG/ZtNnJYOmmotfTJWgKyeYEb/Fs0y7jtKxGUo43syV0zrR2fnAUvPDvIw1pU+/y0ii5SnGRXInbF/BYxS2uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
+  "projectFilePath": "C:\\Users\\recep\\OneDrive\\Masaüstü\\Web_6_Projects\\Week_14\\MiniShopApp\\MiniShopApp.Business\\MiniShopApp.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\recep\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\recep\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.16\\microsoft.data.sqlite.core.5.0.16.nupkg.sha512",

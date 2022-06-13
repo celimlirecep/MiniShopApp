@@ -11,11 +11,11 @@ namespace MiniShopApp.Business.Concrete
 {
     public class CardManager : ICardService
     {
-        private ICardRepository _cardRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CardManager(ICardRepository cardRepository)
+        public CardManager(IUnitOfWork unitOfWork)
         {
-            _cardRepository = cardRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public void AddToCard(string userId, int productId, int quantity)
@@ -37,13 +37,14 @@ namespace MiniShopApp.Business.Concrete
                 {
                     card.CardItems[index].Quantity += quantity;
                 }
-                _cardRepository.Update(card);
+                _unitOfWork.Cards.Update(card);
+                _unitOfWork.Save();
             }
         }
 
         public void ClearCard(int cardId)
         {
-            _cardRepository.ClearCard(cardId);
+            _unitOfWork.Cards.ClearCard(cardId);
         }
 
         public void DeleteFromCard(string userId, int productId)
@@ -51,19 +52,20 @@ namespace MiniShopApp.Business.Concrete
             var card = GetCardByUserId(userId);
             if (card!=null)
             {
-                _cardRepository.DeleteFromCard(card.Id,productId);
+                _unitOfWork.Cards.DeleteFromCard(card.Id,productId);
             }
         }
 
         public Card GetCardByUserId(string userId)
         {
-            return _cardRepository.GetCardByUserId(userId);
+            return _unitOfWork.Cards.GetCardByUserId(userId);
         }
 
         public void InitializeCard(string userId)
         {
             var card = new Card() { UserId = userId };
-            _cardRepository.Create(card);
+            _unitOfWork.Cards.Create(card);
+            _unitOfWork.Save();
         }
     }
 }
