@@ -27,17 +27,19 @@ namespace MiniShopApp.Business.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Category> GetAll()
+        public async Task<List<Category>> GetAll()
         {
-            return _unitOfWork.Categories.GetAll();
+            return await _unitOfWork.Categories.GetAll();
         }
 
-        public Category GetById(int id)
+        
+
+        public void Update(Category entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Category entity)
+        Task<Category> ICategoryService.GetById(int id)
         {
             throw new NotImplementedException();
         }

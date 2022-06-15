@@ -1,0 +1,12 @@
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\bin\Release\net5.0\MiniShopApp.Core.deps.json
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\bin\Release\net5.0\MiniShopApp.Core.dll
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\bin\Release\net5.0\ref\MiniShopApp.Core.dll
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\bin\Release\net5.0\MiniShopApp.Core.pdb
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.csproj.AssemblyReference.cache
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.AssemblyInfoInputs.cache
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.AssemblyInfo.cs
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.dll
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\ref\MiniShopApp.Core.dll
+C:\Users\recep\OneDrive\Masaüstü\MiniShopApp\MiniShopApp.Core\obj\Release\net5.0\MiniShopApp.Core.pdb

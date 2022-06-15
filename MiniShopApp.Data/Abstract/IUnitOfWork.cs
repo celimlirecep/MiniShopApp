@@ -13,5 +13,7 @@ namespace MiniShopApp.Data.Abstract
         IOrderRepository Orders { get; }
         IProductRepository Products { get; }
         void Save();
+        Task<int> SaveAsync();
+        
     }
 }
